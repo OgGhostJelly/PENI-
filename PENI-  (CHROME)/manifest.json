@@ -1,12 +1,12 @@
 {
   "manifest_version": 2,
   "name": "PENI-",
-  "version": "1.0.0",
+  "version": "1.2.0",
 
   "description": "an all in one add-on that does everything you ever need!. it changes all text on a page to PENI-!!. for example: hello there => peni-peni-. or you can change the keyword!!! change it to poop I DONT MIND",
 
   "icons": {
-    "48": "icon.jpg"
+    "170": "icon.jpg"
   },
 
   "content_scripts": [
