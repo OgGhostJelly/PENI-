@@ -1,0 +1,33 @@
+{
+  "manifest_version": 2,
+  "name": "PENI-",
+  "version": "1.0.0",
+
+  "description": "an all in one add-on that does everything you ever need!. it changes all text on a page to PENI-!!. for example: hello there => peni-peni-. or you can change the keyword!!! change it to poop I DONT MIND",
+
+  "icons": {
+    "48": "icon.jpg"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["peni-.js"]
+    }
+  ],
+
+  "background": {
+    "scripts": ["background.js"]
+  },
+
+  "permissions": [
+    "storage"
+  ],
+
+  "browser_action": {
+    "default_icon": "icon.jpg",
+    "default_title": "PENI-",
+    "default_popup": "peni-.html"
+  }
+
+}
