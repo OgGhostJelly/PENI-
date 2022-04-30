@@ -1,6 +1,7 @@
 chrome.storage.local.get(
-    ['specialtxt'],
+    ['specialtxt','full','img'],
     function(item) {
+        console.log(item)
         specialtxt = item.specialtxt
         function peniantitag(parentnode) {
             switch(parentnode.tagName) {
@@ -59,7 +60,7 @@ chrome.storage.local.get(
                 if (peni[i].tagName == 'IMG') {
                     peni[i].setAttribute('width',peni[i].width)
                     peni[i].setAttribute('height',peni[i].height)
-                    peni[i].setAttribute('src',browser.runtime.getURL("icon.jpg"))
+                    peni[i].setAttribute('src',chrome.runtime.getURL("icon.jpg"))
                 }
             }
         }

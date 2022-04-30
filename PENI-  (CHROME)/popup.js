@@ -1,5 +1,5 @@
 console.log('pop')
-chrome.storage.local.get(['specialtxt'],function(item) {
+chrome.storage.local.get(['full','img'],function(item) {
     document.getElementById('button-full').value = item.full
     document.getElementById('button-img').value = item.img
     console.log('set')
