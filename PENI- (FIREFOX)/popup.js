@@ -3,9 +3,9 @@ browser.storage.local.get(function(item) {
     document.getElementById('button-img').value = item.img
 })
 document.getElementById('button-enter').addEventListener('click',function(){
-    if (!!document.getElementById('input').value) {
+    if (!!document.getElementById('input-enter').value) {
         browser.storage.local.set( {
-                specialtxt: document.getElementById('input').value,
+                specialtxt: document.getElementById('input-enter').value,
             }
         )
     } else {

@@ -3,4 +3,3 @@ chrome.storage.local.set( {
     full: 0,
     img: 0,
 })
-console.log('background')

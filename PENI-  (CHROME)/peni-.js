@@ -1,7 +1,6 @@
 chrome.storage.local.get(
     ['specialtxt','full','img'],
     function(item) {
-        console.log(item)
         specialtxt = item.specialtxt
         function peniantitag(parentnode) {
             switch(parentnode.tagName) {
