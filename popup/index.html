@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        html {
+            background-image: url('../icon.jpg');
+            background-repeat: repeat;
+            background-size: 50px 50px;
+            color: rgb(255, 0, 128);
+            font-family: 'Oswald', sans-serif;
+        }
+
+        body {
+            padding: 16px;
+        }
+
+        input {
+            color: hotpink;
+            accent-color: hotpink;
+        }
+
+        h3 {
+            margin: 0;
+        }
+
+        .bg-pink {
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="loading">
+        Loading...
+    </div>
+    <div id="main-content" style="display: none;">
+        <div>
+            <h3>SPECIAL TEXT</h3>
+            <input id="text-input">
+        </div>
+        <hr>
+        <div>
+            <h3>
+                CHANGE IMAGES <span class="bg-pink"><input id="replaceImages-input" type="checkbox"></span>
+            </h3>
+        </div>
+        <hr>
+        <div>
+            <h3>IMAGE URL</h3>
+            <input id="image-url-input" type="text">
+        </div>
+        <hr>
+        <div>
+            <button id="save-text-input">Save</button>
+        </div>
+    </div>
+</body>
+<script src="../common.js"></script>
+<script src="./index.js"></script>
+
+</html>

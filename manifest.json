@@ -1,0 +1,36 @@
+{
+  "manifest_version": 2,
+  "name": "PENI-",
+  "version": "1.3.0",
+  "description": "A new cutting-edge extension that will revolutionise the way you browse the internet, Forever.",
+  "icons": {
+    "170": "icon.jpg"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "common.js",
+        "content.js"
+      ]
+    }
+  ],
+  "permissions": [
+    "storage"
+  ],
+  "web_accessible_resources": [
+    "icon.jpg"
+  ],
+  "browser_action": {
+    "default_icon": "icon.jpg",
+    "default_title": "PENI-",
+    "default_popup": "popup/index.html"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{4fa42406-370f-48d1-a819-7754b579bc21}"
+    }
+  }
+}
