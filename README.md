@@ -7,7 +7,7 @@ A word from one of our devoted customers:
 
 Live. Laugh. Peni- Extension. Extend your possibilities.
 
-[Get [[NOW]]](https://addons.mozilla.org/uk/firefox/addon/p3ni-) and become a real [REAL] BIG guy
+[Get [[NOW]]](https://addons.mozilla.org/firefox/addon/p3ni-) and become a real [REAL] BIG guy
 
 # How to Use
 
