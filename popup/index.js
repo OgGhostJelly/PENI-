@@ -3,6 +3,7 @@ const content = document.body.querySelector("#main-content")
 
 const textInput = document.body.querySelector("#text-input")
 const saveTextInput = document.body.querySelector("#save-text-input")
+const saveChangesSpan = document.body.querySelector("#save-changes")
 const replaceImagesInput = document.body.querySelector("#replaceImages-input")
 const imageUrlInput = document.body.querySelector("#image-url-input")
 
@@ -17,11 +18,11 @@ async function main() {
     content.style.display = ""
 
     textInput.addEventListener('change', (event) => {
-        config.text = event.target.value
+        config.text = event.target.value || __peniExtensionCommon.getDefaultText() || config.text
     })
 
     imageUrlInput.addEventListener('change', (event) => {
-        config.imageUrl = event.target.value
+        config.imageUrl = event.target.value || __peniExtensionCommon.getDefaultImageUrl() || config.imageUrl
     })
 
     replaceImagesInput.addEventListener('change', (event) => {
@@ -48,8 +49,21 @@ async function main() {
     // Keep chaining sync requests onto this promise so stuff happens in the right order
     // or else you might get race conditions
     let syncPromise = Promise.resolve()
+
+    let resetSpanId = null
+
     function onChange() {
-        syncPromise = syncPromise.then(setConfig(config))
+        syncPromise = syncPromise.then(setConfig(config)).then(() => {
+            if (resetSpanId != null) {
+                clearTimeout(resetSpanId)
+            }
+
+            saveChangesSpan.style.display = ""
+
+            resetSpanId = setTimeout(() => {
+                saveChangesSpan.style.display = "none"
+            }, 1000)
+        })
     }
 }
 

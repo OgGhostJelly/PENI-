@@ -19,7 +19,7 @@ async function transformImageNodes(config, node) {
     if (node.nodeName == "IMG") {
         node.width = node.width
         node.height = node.height
-        node.src = config.imageUrl || (window.browser ?? window.chrome).runtime.getURL("icon.jpg")
+        node.src = config.imageUrl || __peniExtensionCommon.getDefaultImageUrl() || node.src
     }
 
     for (const child of node.childNodes) {
@@ -51,6 +51,11 @@ async function transformTextNodes(config, node) {
 
 
 function penifyText(config, text) {
+    newText = config.text || __peniExtensionCommon.getDefaultText()
+    if (!newText) {
+        return text;
+    }
+
     ret = ""
     counter = 0
 
@@ -61,7 +66,7 @@ function penifyText(config, text) {
             continue;
         }
 
-        ret += config.text[counter % config.text.length]
+        ret += newText[counter % newText.length]
         counter += 1
     }
 
