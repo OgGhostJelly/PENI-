@@ -17,7 +17,7 @@ __peniExtensionCommon = (() => {
      * @returns The user configuration as a promise.
      */
     function getConfig() {
-        const defaultValues = { text: getDefaultText(), replaceImages: true, imageUrl: getDefaultImageUrl() }
+        const defaultValues = { text: getDefaultText(), replaceImages: true, imageUrl: getDefaultImageUrl(), disabled: false }
         if (window.browser) {
             return browser.storage.sync.get(defaultValues)
         } else if (window.chrome) {

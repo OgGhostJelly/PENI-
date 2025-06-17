@@ -76,6 +76,9 @@ function penifyText(config, text) {
 async function main() {
     // You can find the code for __peniExtensionCommon in `common.js`
     config = await __peniExtensionCommon.getConfig()
+    if (config.disabled) {
+        return;
+    }
 
     // Transform the nodes of the entire document
     const title = document.head.querySelector("title")

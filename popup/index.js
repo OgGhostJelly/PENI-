@@ -4,8 +4,11 @@ const content = document.body.querySelector("#main-content")
 const textInput = document.body.querySelector("#text-input")
 const saveTextInput = document.body.querySelector("#save-text-input")
 const saveChangesSpan = document.body.querySelector("#save-changes")
+
 const replaceImagesInput = document.body.querySelector("#replaceImages-input")
 const imageUrlInput = document.body.querySelector("#image-url-input")
+
+const disableExtInput = document.body.querySelector("#disable-ext-input")
 
 async function main() {
     config = await __peniExtensionCommon.getConfig()
@@ -13,6 +16,7 @@ async function main() {
     textInput.value = config.text
     replaceImagesInput.checked = config.replaceImages
     imageUrlInput.value = config.imageUrl
+    disableExtInput.checked = config.disabled
 
     loading.style.display = "none"
     content.style.display = ""
@@ -27,6 +31,10 @@ async function main() {
 
     replaceImagesInput.addEventListener('change', (event) => {
         config.replaceImages = event.target.checked
+    })
+
+    disableExtInput.addEventListener('change', (event) => {
+        config.disabled = event.target.checked
     })
 
     saveTextInput.addEventListener('click', (event) => {
